@@ -1,9 +1,9 @@
-const http = require('http');
+var express = require('express')
 
-const server = http.createServer();
+var app = express();
 
-server.on('request', (req, res) => {
-    res.end('Ok from my dummy server')
+app.get('/', function (req, res) {
+    res.send('Ok from my dummy server')
 })
 
-server.listen(3000, () => console.log('server is running'));
+app.listen(3000);
